@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Gungun ❤️</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+  html,body{width:100%;height:100%;background:#ffe6ef;overflow:hidden}
+  .page{position:absolute;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:opacity 0.5s ease;opacity:1}
+  .hidden{opacity:0;pointer-events:none}
+  h1,h2,p{text-align:center;color:#b30059;padding:0 20px}
+  .btn{padding:12px 28px;margin:10px;border:none;border-radius:30px;font-size:18px;cursor:pointer}
+  .yes{background:#ff4d88;color:#fff}
+  .no{background:#999;color:#fff}
+  /* leaves */
+  .leaf{position:absolute;top:-50px;width:25px;height:25px;background:rgba(255,105,180,0.5);border-radius:0 50% 50% 50%;animation:fall linear infinite}
+  @keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+  /* hearts */
+  .heart{position:absolute;bottom:-40px;font-size:20px;color:#ff4d88;animation:float 6s linear infinite}
+  @keyframes float{to{transform:translateY(-110vh);opacity:0}}
+  /* confetti */
+  .confetti{position:absolute;width:8px;height:8px;background:#ff4d88;animation:confetti 1.5s linear infinite}
+  @keyframes confetti{to{transform:translateY(100vh) rotate(720deg);opacity:0}}
+  /* broken heart */
+  .broken{font-size:80px;animation:shake 0.8s infinite}
+  @keyframes shake{0%{transform:rotate(0)}25%{transform:rotate(5deg)}50%{transform:rotate(-5deg)}75%{transform:rotate(5deg)}100%{transform:rotate(0)}}
+  .message{max-width:700px;overflow-y:auto;padding:20px}
+</style>
+</head>
+<body>
+<!-- PAGE 1 -->
+<div class="page" id="page1">
+  <h1>Hyee please don't leave please 🙏</h1>
+  <p>Bas ek minute, I need to say something important….</p>
+  <button class="btn yes" onclick="goPage(2)">Next</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page hidden" id="page2">
+  <div class="message">
+    <p>Dear Gungun / Gunnu,<br><br>
+    Hi, What's up? Main tujhse kuch kehna chahta hu and it's really important to me.<br><br>
+    Main yeh kehna chahta hu ki naajane kab, kaha, kaise mujhe tujhse pyar ❤️ ho gaya. Aur haan mujhe yaad hai ki tune mujhe reject 💔 kar diya hai 3-3 baar, par kya karun main. Jab se tune mujhe reject kiya tab se tu mujhe aur pyari lagne lagi hai. Main feeling tere liye aur badh gaye hai and main tere taraf aur attract hone laga hu. Aur main aoro🇳🇵 ki taraha nahi ki chor kar chala jao. Maine tujhe like nahi, tujhse love kiya hai, wo bhi pure 🎀. Aur main give up nahi karne wala tujhpe. Chahe tu jo kare, I just really love youu 🥹💘.<br><br>
+    Aur tujhe hurt karne ka soch bhi nahi sakta main kyuki dard tujhse jayada mujhe hoga.<br>
+    Aur tu kehte hai na ki mujhe relationship ke ups and downs nahi pata, haan mujhe nahi pata par kyunki tu mera pehla pyar hai, tu mujhe jaisa dhale ge main waisa dhal jaunga. Agar tu bole ge ki main yeh kaam naa karu to main nhi karunga kyuki tere ichcha mere liye aadesh hai. Tujhe pata, tere kahe hui ek ek baat yaad hai mujhe.<br>
+    And at last, tere bahut care karta hu, tere baare main humesha soochta rehta hu🫠, Aur tere bare main bura nahi sun sakta, Aur mera wada hai tujhse, tujhe kabhi regret nahi feel hone dunga. I promise.<br>
+    Issme maine jo bhi baat likhi hai, unme se ek baat jhoti nahi, sab mere dil se nikli hai.<br>
+    Mujhe pata hai ki tu move on nahi kar paa rahi.<br>
+    Toh kya mujhe tu ek chance degi unn feelings ko phir se likhne ka?<br>
+    I'll treasure you forever, just give me a chance gunnu 🙏.<br>
+    Aur main efforts dalne ko taiyyar hu, bas tu haa to kar. Jitna main apne parents ki respect, care aur love karta hu uttna he main tujhse bhi karta hu. Main tere liye sab seh sakta hu, bas tere narazgi nahi.<br><br>
+    So, what's your answer? Kya tum mujhe ek chance dena pasand karoge.</p>
+  </div>
+  <button class="btn yes" onclick="yesClick()">Yes</button>
+  <button class="btn no" onclick="noClick()">No</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page hidden" id="page3"></div>
+
+<script>
+// Page switch
+function goPage(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+  document.getElementById('page'+n).classList.remove('hidden');
+}
+
+// Leaves animation
+for(let i=0;i<20;i++){
+  let l=document.createElement('div');
+  l.className='leaf';
+  l.style.left=Math.random()*100+'%';
+  l.style.animationDuration=5+Math.random()*5+'s';
+  document.body.appendChild(l);
+}
+
+// Hearts animation
+setInterval(()=>{
+  let h=document.createElement('div');
+  h.className='heart';
+  h.innerHTML='❤';
+  h.style.left=Math.random()*100+'%';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},500);
+
+// Yes button click
+function yesClick(){
+  goPage(3);
+  let page3=document.getElementById('page3');
+  page3.innerHTML='<h2>Thank you mujhe chance Dene ke liye 💗💘<br><br>I feel so blessed Having you in my LIFE<br><br> Answer In DM</h2>';
+  for(let i=0;i<40;i++){
+    let c=document.createElement('div');
+    c.className='confetti';
+    c.style.left=Math.random()*100+'%';
+    c.style.background='hsl('+Math.random()*360+',80%,70%)';
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),1500);
+  }
+}
+
+// No button click
+function noClick(){
+  goPage(3);
+  let page3=document.getElementById('page3');
+  page3.innerHTML='<div class="broken">💔</div><p>Sorry For wasting Your Time But Don\'t worry I won\'t Give Up Jab Tak mere pass Time hai 😅🥲 <br><br>Answer In DM</p>';
+}
+</script>
+</body>
+</html>
